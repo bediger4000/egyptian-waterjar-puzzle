@@ -1,0 +1,87 @@
+#!/usr/bin/env python
+
+from collections import deque
+
+queue = deque()
+
+already = dict()
+
+start = (8,0,0)
+
+queue.append(start)
+
+while True:
+    try: item = queue.popleft()
+    except IndexError:
+        break
+    N = item[0]*100 + item[1]*10 + item[2]
+    if N in already:
+        continue
+    #print(N)
+    already[N] = True
+    jar8 = item[0]
+    jar5 = item[1]
+    jar3 = item[2]
+    total = jar8 + jar5 + jar3
+    if total != 8:
+        print("Problem: jars sum to "+total)
+        sys.exit(1)
+    if jar8 > 0:
+        if jar5 < 5:
+            v5 = 5 - jar5
+            if v5 >= jar8:
+                newconfig = (0,jar5+jar8,jar3)
+            else:
+                newconfig = (jar8-v5,5,jar3)
+            queue.append(newconfig);
+            M = newconfig[0]*100 + newconfig[1]*10 + newconfig[2]
+            print('node'+str(N), '->', 'node'+str(M), ";")
+        if jar3 < 3:
+            v3 = 3 - jar3
+            if v3 >= jar8:
+                newconfig = (0,jar5,jar3+jar8)
+            else:
+                newconfig = (jar8-v3,jar5,3)
+            queue.append(newconfig);
+            M = newconfig[0]*100 + newconfig[1]*10 + newconfig[2]
+            print('node'+str(N), '->', 'node'+str(M), ";")
+
+    if jar5 > 0:
+        if jar8 < 8:
+            v8 = 8 - jar8
+            if v8 >= jar5:
+                newconfig = (jar8+jar5,0,jar3)
+            else:
+                newconfig = (8,jar5-v8,jar3)
+            queue.append(newconfig);
+            M = newconfig[0]*100 + newconfig[1]*10 + newconfig[2]
+            print('node'+str(N), '->', 'node'+str(M), ";")
+        if jar3 < 3:
+            v3 = 3 - jar3
+            if v3 >= jar5:
+                newconfig = (jar8,0,jar3+jar5)
+            else:
+                newconfig = (jar8,jar5-v3,3)
+            queue.append(newconfig);
+            M = newconfig[0]*100 + newconfig[1]*10 + newconfig[2]
+            print('node'+str(N), '->', 'node'+str(M), ";")
+
+    if jar3 > 0:
+        if jar8 < 8:
+            v8 = 8 - jar8
+            if v8 >= jar3:
+                newconfig = (jar8+jar3,jar5,0)
+            else:
+                newconfig = (8,jar5,jar3-v8)
+            queue.append(newconfig);
+            M = newconfig[0]*100 + newconfig[1]*10 + newconfig[2]
+            print('node'+str(N), '->', 'node'+str(M), ";")
+        if jar5 < 5:
+            v5 = 5 - jar5
+            if v5 >= jar3:
+                newconfig = (jar8,jar5+jar3,0)
+            else:
+                newconfig = (jar8,5,jar3-v5)
+            queue.append(newconfig);
+            M = newconfig[0]*100 + newconfig[1]*10 + newconfig[2]
+            print('node'+str(N), '->', 'node'+str(M), ";")
