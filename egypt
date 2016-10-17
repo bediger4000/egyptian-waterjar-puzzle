@@ -17,8 +17,11 @@ queue = deque()
 already = dict()
 
 start = (8,0,0)
+total = start[0] + start[1] + start[2]
 
 queue.append(start)
+
+print('digraph g {')
 
 while True:
     try: item = queue.popleft()
@@ -32,11 +35,11 @@ while True:
     jar8 = item[0]
     jar5 = item[1]
     jar3 = item[2]
-    total = jar8 + jar5 + jar3
+    current_total = jar8 + jar5 + jar3
 
 
-    if total != 8:
-        print("Problem: jars sum to "+total)
+    if current_total != total:
+        print("Problem: jars sum to "+str(current_total)+" should sum to", total)
         sys.exit(1)
     if jar8 > 0:
         if jar5 < 5:
@@ -91,3 +94,4 @@ while True:
                 newconfig = (jar8,5,jar3-v5)
             queue.append(newconfig);
             print_pour(item, newconfig)
+print('}')
