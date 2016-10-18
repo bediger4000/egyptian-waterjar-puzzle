@@ -68,7 +68,7 @@ written down the book's solution, annotated with its odd description.
 
 ##State Space Chart
 
-![8,5,3 ale jug state space](https://raw.githubusercontent.com/bediger4000/egyptian-jug-puzzle/master/egypt.png)
+![8,5,3 ale jug state space](https://raw.githubusercontent.com/bediger4000/egyptian-waterjar-puzzle/master/egypt.png)
 
 ##Recreating the state space chart
 
