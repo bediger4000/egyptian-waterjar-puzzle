@@ -55,7 +55,7 @@ I make out the shortest path from `(8,0,0)` to `(4,4,0)` is:
 7. `(1,4,3)` &rarr; `(4,4,0)` - pour the 3-hinu jar into the 8-hinu jar
 
 This is different, and one step shorter, than the book's solution. I've
-written down the book's solution, annotated with it's odd description.
+written down the book's solution, annotated with its odd description.
 
 1. `(8,0,0)` &rarr; `(5,0,3)` - Fill 3
 2. `(5,0,3)` &rarr; `(5,3,0)` - put into 5
@@ -72,7 +72,7 @@ written down the book's solution, annotated with it's odd description.
 
 ##Recreating the state space chart
 
-The Python program `egypt` creates [dot language]() output, suitable for
+The Python program `egypt` creates [dot language](http://www.graphviz.org/content/dot-language) output, suitable for
 [graphviz](https://www.graphviz.org) processing into an image.
 You could recreate the chart above like this (from the Linux command line, of course):
 
