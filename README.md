@@ -73,7 +73,7 @@ written down the book's solution, annotated with its odd description.
 ##Recreating the state space chart
 
 The Python program `egypt` creates [dot language](http://www.graphviz.org/content/dot-language) output, suitable for
-[graphviz](https://www.graphviz.org) processing into an image.
+[graphviz](http://www.graphviz.org/Home.php) processing into an image.
 You could recreate the chart above like this (from the Linux command line, of course):
 
     ./egypt > egypt.dot
