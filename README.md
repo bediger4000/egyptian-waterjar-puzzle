@@ -11,7 +11,9 @@ Problem 23, page 32 reads:
     measures of ale. What is the most effective way that he could do so without
     resorting to guesswork or findind some extra measuring devices?
 
-One of probably many pouring fluids into various sized jugs problems.
+According to Wikipedia, this is the [canonical version of the problem](https://en.wikipedia.org/wiki/Liquid_water_pouring_puzzles):
+3 jugs, 8, 5 and 3 measures capacity respectively, with the 8-measure jug full at the
+start. How about that!?!
 
 
 ##Implementation
