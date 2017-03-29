@@ -1,4 +1,4 @@
-#Egyptian Ale Jug Puzzle
+# Egyptian Ale Jug Puzzle
 
 From: "Tutanhkamun's Book of Puzzles" by Tim Dedopulus, 2013, Metro Book, ISBN 978-1-4351-4899-4
 
@@ -16,7 +16,7 @@ According to Wikipedia, this is the [canonical version of the problem](https://e
 start. How about that!?!
 
 
-##Implementation
+## Implementation
 
 I wrote a small Python program to explore the entire state-space of the 3 jugs.
 Each state is a triplet of integers, like `(8,0,0)` or `(0,5,3)`. Each triplet
@@ -40,7 +40,7 @@ jug overflows.  I was not able to find a starting state that had an infinite
 state space, but some starting states, like `(4,3,1)` or `(5,1,2)`, cannot be
 reached from the other states.
 
-##Solution
+## Solution
 For the `(8,0,0)` starting triplet, the program
 finds a 16-state space with any number of cycles. No nodes are only "out" or "in" nodes, where
 you can only start at an "out" node and never get back, or arrive at an "in" node and never
@@ -68,11 +68,11 @@ written down the book's solution, annotated with its odd description.
 7. `(7,1,0)` &rarr; `(4,1,3)` - fill 3 from 8
 8. `(4,1,3)` &rarr; `(4,4,0)` - put it into 5
 
-##State Space Chart
+## State Space Chart
 
 ![8,5,3 ale jug state space](https://raw.githubusercontent.com/bediger4000/egyptian-waterjar-puzzle/master/egypt.png)
 
-##Recreating the state space chart
+## Recreating the state space chart
 
 The Python program `egypt` creates [dot language](http://www.graphviz.org/content/dot-language) output, suitable for
 [graphviz](http://www.graphviz.org/Home.php) processing into an image.
